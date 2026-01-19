@@ -39,6 +39,7 @@ body{
     color: white;
 }
 
+
 .password-container{
     padding: 0px 15px;
     background-color: #31363F;
@@ -52,6 +53,14 @@ body{
 .password-container h1{
     text-transform: capitalize;
     color: lightgrey;
+}
+.password-container button{
+    outline: 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    cursor: pointer;
 }
 
 .ranges{
