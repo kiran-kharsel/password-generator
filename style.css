@@ -79,7 +79,7 @@ body{
 }
 
 .range-container input{
-    accent-color: grey;
+    accent-color: var(--accent-color);
 }
 
 .range-container span{
