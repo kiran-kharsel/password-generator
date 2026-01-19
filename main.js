@@ -56,30 +56,61 @@ allCheckBoxes.forEach((checkbox) => {
 });
 
 generatePasswordBtn.addEventListener("click", function () {
-  //check if no checkbox is checked
-  if (passwordCharacters === "" || passwordCharacters === undefined) {
-    // copy fn btn disabled
-    copyPasswordBtn.disabled = true;
-    passwordElem.innerText = "click on checkbox";
-    return;
+  generatePassword();
+});
+
+// password generate
+function generatePassword() {
+  // select all values from range and checkbox
+  const length = charRangeInput.value;
+  const includeUppercase = document.getElementById("uppercase").checked;
+  const includeLowercase = document.getElementById("lowercase").checked;
+  const includeNumbers = document.getElementById("numbers").checked;
+  const includeSymbols = document.getElementById("symbol").checked;
+
+  // characters
+  let allChars = "";
+  let uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  let numbersChars = "0123456789";
+  let symbolChars = "!@#$%^&*()_+[]{}|;:,.<>?";
+
+  // check if any checkbox selected
+  if(includeUppercase){
+    allChars += uppercaseChars;
   }
 
-  let charRange = charRangeInput.value;
-  let password = "";
-  // copy fn btn enable
-  copyPasswordBtn.disabled = false;
+  if(includeLowercase){
+    allChars += lowercaseChars;
+  }
 
-  // loop upto range to get password
-  for (let i = 1; i <= charRange; i++) {
-    let randomNum = Math.floor(Math.random() * passwordCharacters.length);
-    password += passwordCharacters[randomNum];
+  if(includeNumbers){
+    allChars += numbersChars;
+  }
+
+  if(includeSymbols){
+    allChars += symbolChars;
+  }
+
+  // check if no checkbox selected
+  if(allChars === ''){
+    return
+  }
+
+
+  // create password
+  let password = '';
+  
+  for(let i=0; i<length; i++){
+    const randomIndex = Math.floor(Math.random() * allChars.length);
+    password += allChars[randomIndex];
   }
 
   passwordElem.innerText = password;
-});
+}
 
 // copy password
 copyPasswordBtn.addEventListener("click", function () {
-    console.log('copied')
+  console.log("copied");
   navigator.clipboard.writeText(passwordElem.innerText);
 });
