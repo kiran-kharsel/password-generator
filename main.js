@@ -3,6 +3,7 @@
 const generatePasswordBtn = document.querySelector('.generate-password');
 const charRangeInput = document.querySelector('#range')
 const charLengthElem = document.querySelector('.char-length')
+const passwordElem = document.querySelector('.password')
 
 // checkboxes
 const allCheckBoxes = document.querySelectorAll('.checkbox-container input')
@@ -57,10 +58,16 @@ generatePasswordBtn.addEventListener('click', function(){
     let charRange = charRangeInput.value;
     console.log(passwordCharacters.length)
 
+    let password = '';
+
     // loop upto range to get password
     for(let i=1; i <= charRange; i++){
         let randomNum = Math.floor(Math.random() * passwordCharacters.length);
         console.log(passwordCharacters[randomNum])
+        password += passwordCharacters[randomNum];
     }
+
+    console.log(password)
+    passwordElem.innerText = password;
 });
 
