@@ -32,23 +32,20 @@ allCheckBoxes.forEach((checkbox) => {
     checkbox.addEventListener('change', function(){
         console.log(checkbox.id);
         if(checkbox.id === 'uppercase' && checkbox.checked){
-            // passwordCharacters.push(uppercaseChar)
-            passwordCharacters += uppercaseChar;
-            
+            passwordCharacters += uppercaseChar;         
         }
 
         if(checkbox.id === 'lowercase' && checkbox.checked){
-            passwordCharacters.push(lowercaseChar)
+            passwordCharacters += lowercaseChar;
         }
 
         if(checkbox.id === 'numbers' && checkbox.checked){
-            passwordCharacters.push(numbers)
+            passwordCharacters += numbers;
         }
 
         if(checkbox.id === 'symbol' && checkbox.checked){
-            passwordCharacters.push(symbol)
+            passwordCharacters += symbol;
         }
-        //console.log(passwordCharacters)
     })
 })
 
