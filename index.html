@@ -8,6 +8,41 @@
     <script defer src="./main.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h2 class="heading">password generator</h2>
+
+        <div class="password-container">
+            <h1 class="password">password</h1>
+            <div class="copy-btn">
+                <button>📋</button>
+            </div>
+        </div>
+
+        <div>
+            <div class="range-container">
+                <label for="range">character length</label>
+                <input value="0" type="range" id="range" min="5" max="20">
+            </div>
+            <div class="checkbox-container">
+                <div>
+                    <input id="uppercase" type="checkbox">
+                    <label for="uppercase">include uppercase letters</label>
+                </div>
+                <div>
+                    <input id="lowercase" type="checkbox">
+                    <label for="lowercase">include lowercase letters</label>
+                </div>
+                <div>
+                    <input id="numbers" type="checkbox">
+                    <label for="numbers">include numbers</label>
+                </div>
+                <div>
+                    <input id="symbol" type="checkbox">
+                    <label for="symbol">include symbol</label>
+                </div>
+            </div>
+            <button>generate password</button>
+        </div>
+    </div>
 </body>
 </html>
