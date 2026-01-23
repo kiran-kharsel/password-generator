@@ -15,3 +15,4 @@ password generator project in vanila js where user can control character length,
 
 
 ## 📸 Demo
+![App Screnshot](/assets/demo.png)
